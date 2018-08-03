@@ -8,10 +8,11 @@ public class InputParser {
     public ArrayList<ArrayList<Node>> grid = new ArrayList<>();
     public int numberOfWorkers;
 
-    public void read (String filename) {
+    public void read(String filename) {
         try {
             Scanner scanner = new Scanner(new File(filename));
-            numberOfWorkers = scanner.nextInt(); scanner.nextLine();
+            numberOfWorkers = scanner.nextInt();
+            scanner.nextLine();
 
             while (scanner.hasNext()) {
                 String line = scanner.nextLine();
@@ -39,19 +40,20 @@ public class InputParser {
 
 abstract class Node {
     char id;
+
     public Node(char id) {
         this.id = id;
     }
 }
 
 class Mine extends Node {
-    public Mine (char id) {
+    public Mine(char id) {
         super(id);
     }
 }
 
 class Depot extends Node {
-    public Depot (char id) {
+    public Depot(char id) {
         super(id);
     }
 }
